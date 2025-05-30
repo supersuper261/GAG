@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  
+  <title>ADV</title>
+</head>
+<body>
+  <header>
+      <h1 class="Web"><a href="MainPage.html">ADV</a></h1>
+    <nav>
+      <ul class="nav">
+        <li><a href="MainPage.html">Home</a></li>
+        <li><a href="AboutPage.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="gag">
+    <h1>Grow a Garden: Mutation Value Calculator</h1>
+
+  <div class="description">
+    <!-- Custom Select for Crop -->
+<div class="custom-select" id="baseValueDropdown">
+  <div class="selected">Select Crop</div>
+  <ul class="options">
+    <li data-value="18">Carrot - 18</li>
+    <li data-value="30">Tomato - 30</li>
+    <li data-value="40">Corn - 40</li>
+    <li data-value="50">Strawberry - 50</li>
+    <li data-value="60">Raspberry - 60</li>
+    <li data-value="150">Glowshroom - 150</li>
+    <li data-value="208">Cherry Blossom - 208</li>
+    <li data-value="271">Peach - 271</li>
+    <li data-value="275">Apple - 275</li>
+    <li data-value="400">Blueberry - 400</li>
+    <li data-value="400">Coconut - 400</li>
+    <li data-value="500">Pear - 500</li>
+    <li data-value="767">Orange Tulip - 767</li>
+    <li data-value="900">Lemon - 900</li>
+    <li data-value="1000">Papaya - 1,000</li>
+    <li data-value="1805">Pineapple - 1,805</li>
+    <li data-value="3000">Banana - 3,000</li>
+    <li data-value="3000">Cranberry - 3,000</li>
+    <li data-value="3000">Watermelon - 3,000</li>
+    <li data-value="3069">Cactus - 3,069</li>
+    <li data-value="3610">Bamboo - 3,610</li>
+    <li data-value="3800">Mint - 3,800</li>
+    <li data-value="4000">Pumpkin - 4,000</li>
+    <li data-value="4750">Dragon Fruit - 4,750</li>
+    <li data-value="6000">Eggplant - 6,000</li>
+    <li data-value="6000">Moonflower - 6,000</li>
+    <li data-value="6500">Mango - 6,500</li>
+    <li data-value="7150">Blood Banana - 7,150</li>
+    <li data-value="7085">Grape - 7,085</li>
+    <li data-value="7220">Pepper - 7,220</li>
+    <li data-value="9500">Durian - 9,500</li>
+    <li data-value="9927">Cacao - 9,927</li>
+    <li data-value="10000">Cursed Fruit - 10,000</li>
+    <li data-value="13000">Starfruit - 13,000</li>
+    <li data-value="15000">Moon Melon - 15,000</li>
+    <li data-value="16500">Chocolate Carrot - 16,500</li>
+    <li data-value="18050">Beanstalk - 18,050</li>
+    <li data-value="20000">Moonglow - 20,000</li>
+    <li data-value="20000">Lotus - 20,000</li>
+    <li data-value="20000">Moon Mango - 20,000</li>
+    <li data-value="23100">Venus Fly Trap - 23,100</li>
+    <li data-value="45000">Moon Blossom - 45,000</li>
+    <li data-value="52000">Red Lollipop - 52,000</li>
+    <li data-value="90000">Candy Blossom - 90,000</li>
+    <li data-value="136277">Mushroom - 136,277</li>
+    <li data-value="145000">Candy Sunflower - 145,000</li>
+  </ul>
+</div>
+
+<!-- Custom Select for Growth Mutation -->
+<div class="custom-select" id="growthMutation">
+  <div class="selected">Growth Mutation</div>
+  <ul class="options">
+    <li data-value="1">None (x1)</li>
+    <li data-value="25">Golden (x25)</li>
+    <li data-value="50">Rainbow (x50)</li>
+  </ul>
+</div>
+
+  </div>
+
+  <section class="RF">
+    <div>
+    <label>Environmental Mutations:</label>
+  <div class="checkbox-group">
+    <div class="row">
+      <label>
+        Wet (+1)
+        <input type="checkbox" value="1" class="env" />
+        <span class="custom-checkbox"></span>
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        Chilled (+1)
+        <input type="checkbox" value="1" class="env" />
+        <span class="custom-checkbox"></span>
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        Chocolate (+1)
+        <input type="checkbox" value="1" class="env" />
+        <span class="custom-checkbox"></span>
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        Moonlit (+1)
+        <input type="checkbox" value="1" class="env" />
+        <span class="custom-checkbox"></span>
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        Bloodlit (+4)
+        <input type="checkbox" value="4" class="env" />
+        <span class="custom-checkbox"></span>
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        Plasma (+5)
+        <input type="checkbox" value="5" class="env" />
+        <span class="custom-checkbox"></span>
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        Frozen (+10)
+        <input type="checkbox" value="10" class="env" />
+        <span class="custom-checkbox"></span>
+      </label>
+    </div>
+  </div>
+  </div>
+
+  <div>
+    <label>Additional Multipliers:</label>
+  <div class="checkbox-group">
+  <div class="row">
+    <label>
+      Zombified (x25)
+      <input type="checkbox" value="25" class="extra" />
+      <span class="custom-checkbox"></span>
+    </label>
+  </div>
+  <div class="row">
+    <label>
+      Shocked (x100)
+      <input type="checkbox" value="100" class="extra" />
+      <span class="custom-checkbox"></span>
+    </label>
+  </div>
+  <div class="row">
+    <label>
+      Celestial (x120)
+      <input type="checkbox" value="120" class="extra" />
+      <span class="custom-checkbox"></span>
+    </label>
+  </div>
+  <div class="row">
+    <label>
+      Disco (x125)
+      <input type="checkbox" value="125" class="extra" />
+      <span class="custom-checkbox"></span>
+    </label>
+  </div>
+</div>
+  </div>
+
+  <div>
+    <label>Weight (in Kg)</label>
+    <input type="number" id="weight" placeholder="Enter weight in Kg" />
+
+
+  </div>
+
+  </section>
+  
+  
+  
+  
+
+  <button onclick="calculateValue()">Calculate Total Value</button>
+
+  <div class="result" id="result"></div>
+
+  </div>
+  
+
+
+</body>
+ <script src="script.js"></script>
+</html>
+

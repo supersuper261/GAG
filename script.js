@@ -1,39 +1,49 @@
 function calculateValue() {
-  // Get crop value
+  // Get base crop value
   const cropSelected = document.querySelector('#baseValueDropdown .selected');
-  const cropValue = Number(cropSelected.dataset.value);
+  const baseValue = Number(cropSelected.dataset.value);
 
-  // Get growth mutation value
+  // Get fruit weight
+  let weight = Number(document.getElementById('weight').value);
+
+  // Get growth mutation value (default to 0 if not selected)
   const mutationSelected = document.querySelector('#growthMutation .selected');
-  const mutationValue = Number(mutationSelected.dataset.value);
+  let mutationValue = Number(mutationSelected.dataset.value);
+  if (isNaN(mutationValue)) mutationValue = 0;
 
-  // Sum environmental mutations
+  // Sum all checked environmental mutations
   let envSum = 0;
   document.querySelectorAll('.env:checked').forEach(cb => {
     envSum += Number(cb.value);
   });
 
-  // Sum additional multipliers
-  let extraSum = 0;
-  document.querySelectorAll('.extra:checked').forEach(cb => {
-    extraSum += Number(cb.value);
-  });
+  if (mutationValue === 20) {
+    weight -= 11.6;
+  } else if (mutationValue === 1) {
+    weight -= 8;
+  }
 
-  // Get weight
-  const weight = Number(document.getElementById('weight').value);
-
-  // Check for valid selections
-  if (isNaN(cropValue) || isNaN(mutationValue) || isNaN(weight) || weight <= 0) {
-    document.getElementById('result').textContent = "Please select a crop, mutation, and enter a valid weight.";
+  // Prevent negative or zero weight
+  if (weight <= 0) {
+    document.getElementById('result').textContent = "Weight after adjustment must be greater than 0.";
     return;
   }
 
-  // Add (base * (weight / 100)) to the base value
-  let baseWithWeight = cropValue + envSum;
-  baseWithWeight += baseWithWeight * (weight / 100);
+  let extraProduct = 1;
+  document.querySelectorAll('.extra:checked').forEach(cb => {
+    extraProduct += Number(cb.value);
+  });
+  if (extraProduct === 1) extraProduct = 1; // stays 1 if none selected
 
-  // Multiply by mutation and extra multipliers
-  const total = baseWithWeight * mutationValue * (extraSum > 0 ? extraSum : 1);
+  // Check for valid selections
+  if (isNaN(baseValue) || isNaN(weight) || weight <= 0) {
+    document.getElementById('result').textContent = "Please select a crop and enter a valid weight.";
+    return;
+  }
+
+
+  // Final calculation
+  const total = (baseValue * weight) * ((extraProduct + envSum) * mutationValue);
 
   document.getElementById('result').textContent = "Total Value: " + total.toLocaleString();
 }
@@ -67,3 +77,4 @@ document.addEventListener('click', () => {
     openSel.classList.remove('open');
   });
 });
+
